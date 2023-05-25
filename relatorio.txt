@@ -1,0 +1,7 @@
+BAA-0000: {:status "executado", :velocidade 101, :placa "BAA-0000", :multa 150.0, :pontos 5}
+CAA-0000: {:status "executado", :velocidade 130, :placa "CAA-0000", :multa 250.0, :pontos 7}
+CAA-0000: {:status "executado", :velocidade 130.1, :placa "CAA-0000", :multa 300.0, :pontos 12}
+DAA-0000: {:status "executado", :velocidade 130.1, :placa "DAA-0000", :multa 300.0, :pontos 12}
+EAA-0000: {:status "executado", :velocidade 129, :placa "EAA-0000", :multa 250.0, :pontos 7}
+GAA-0000: {:status "executado", :velocidade 101, :placa "GAA-0000", :multa 150.0, :pontos 5}
+HAA-0000: {:status "executado", :velocidade 115, :placa "HAA-0000", :multa 250.0, :pontos 7}

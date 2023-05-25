@@ -1,0 +1,50 @@
+version: "3"
+services:
+  kafka:
+    image: confluentinc/cp-kafka:7.1.2
+    container_name: kafka_cloj
+    restart: always
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: host.docker.internal:2182
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.docker.internal:9094
+      KAFKA_MIN_INSYNC_REPLICAS: 1
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_DEFAULT_REPLICATION_FACTOR: 1
+    ports:
+      - "9094:9094"
+    volumes:
+      - zdata:/var/lib/zookeeper/data
+      - zlog:/var/lib/zookeeper/log
+      - zsecrets:/etc/zookeeper/secrets
+
+  zk:
+    image: confluentinc/cp-zookeeper:7.1.2
+    container_name: zk_clojure
+    restart: always
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 2182
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+    ports:
+      - "2182:2182"
+    volumes:
+      - zdata:/var/lib/zookeeper/data
+      - zlog:/var/lib/zookeeper/log
+      - zsecrets:/etc/zookeeper/secrets
+
+
+volumes:
+  cdata:
+  kdata:
+  ksecrets:
+  mdata:
+  s3data:
+  pgdata:
+  zdata:
+  zlog:
+  zsecrets:
+  mqm5:
