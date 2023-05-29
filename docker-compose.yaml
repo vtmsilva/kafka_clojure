@@ -24,3 +24,13 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://host.docker.internal:9094
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+
+  cassandra:
+    image: cassandra:3.11.6
+    container_name: cass
+    restart: always
+    environment:
+      CASSANDRA_CLUSTER_NAME: consulta
+      CASSANDRA_BROADCAST_ADDRESS: host.docker.internal
+    ports:
+      - "9044:9044"
