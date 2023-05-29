@@ -33,7 +33,7 @@
 (def props
   (doto (Properties.)
     (.putAll
-     {StreamsConfig/APPLICATION_ID_CONFIG             "trt-topology"
+     {StreamsConfig/APPLICATION_ID_CONFIG             "kafka-clojure"
       StreamsConfig/BOOTSTRAP_SERVERS_CONFIG          "host.docker.internal:9094"
       StreamsConfig/DEFAULT_KEY_SERDE_CLASS_CONFIG     (.getClass (Serdes/String))
       StreamsConfig/DEFAULT_VALUE_SERDE_CLASS_CONFIG   (.getClass (Serde-personalizado.))})))
